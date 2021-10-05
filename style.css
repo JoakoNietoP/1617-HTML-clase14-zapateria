@@ -1,9 +1,8 @@
+@charset "UTF-8";
 /* acuérdense que esto lo traemos de la página de google fonts */
-
-@import url('https://fonts.googleapis.com/css2?family=Ephesis&family=PT+Sans&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Ephesis&family=PT+Sans&display=swap");
 
 /* resets */
-
 * {
     padding: 0;
     margin: 0;
@@ -21,23 +20,31 @@
 p,
 h2,
 h3 {
-    font-family: 'PT Sans', sans-serif;
+    font-family: "PT Sans", sans-serif;
 }
 
 /* grid */
 .container {
+    display: -ms-grid;
     display: grid;
-    grid-template-areas: 
-        'header header header header'
-        'main main main aside'
-        'footer footer footer footer';
+    grid-template-areas:
+        "header header header header"
+        "main main main aside"
+        "footer footer footer footer";
 }
 
 header {
     background-color: var(--green-dark);
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 4;
     grid-area: header;
     /* va a ser un padre flex */
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
 }
 
@@ -52,7 +59,7 @@ h1 {
     display: inline-block;
     text-decoration: none;
     color: var(--light);
-    font-family: 'Ephesis', cursive;
+    font-family: "Ephesis", cursive;
     font-size: 3em;
 }
 
@@ -61,18 +68,108 @@ h1:hover {
 }
 
 /* main */
-.product {
-    height: 500px;
+main {
+    background-color: var(--light);
+    -ms-grid-row: 2;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 3;
+    grid-area: main;
+    padding: 3% 2%;
 }
 
-.product img {
+main .containerProducts {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-rows: auto auto auto;
+    grid-template-rows: auto auto auto;
+    -ms-grid-columns: auto auto auto;
+    grid-template-columns: auto auto auto;
+}
+
+main .product {
+    height: 700px;
+    display: -ms-grid;
+    display: grid;
+    border: 1px solid var(--green-light);
+    margin: 3%;
+    padding: 3%;
+    display: grid;
+    -ms-grid-rows: 450px 150px 30px auto;
+    grid-template-rows: 450px 150px 30px auto;
+    -webkit-box-shadow: 2px 2px 4px 2px var(--green-light);
+    box-shadow: 2px 2px 4px 2px var(--green-light);
+}
+
+main .product img {
     width: 80%;
     display: block;
+    margin: auto auto 100px auto;
 }
 
+main .product .btn {
+    -webkit-box-shadow: 3px 1px 7px -2px var(--green-dark);
+    box-shadow: 3px 1px 7px -2px var(--green-dark);
+    background-color: var(--green-medium);
+    border-radius: 20px;
+    border: 1px solid var(--green-dark);
+    display: block;
+    margin: 5% auto 0 auto;
+    cursor: pointer;
+    color: var(--light);
+    font-family: "PT Sans", sans-serif;
+    font-size: 1em;
+    padding: 3px 40px;
+    text-decoration: none;
+    text-shadow: 0px 1px 0px var(--green-dark);
+}
+
+main .product .btn:hover {
+    background-color: var(--dark);
+}
 
 /* aside */
+aside {
+    background-color: var(--green-light);
+    -ms-grid-row: 2;
+    -ms-grid-column: 4;
+    grid-area: aside;
+}
+
+aside p,
+aside h3 {
+    padding: 3%;
+}
+
+aside figure {
+    display: block;
+    text-align: center;
+    background-color: var(--light-transparent);
+    margin: 5%;
+    padding: 5%;
+    border-radius: 20px;
+}
 
 /* footer */
+footer {
+    background-color: var(--green-dark);
+    -ms-grid-row: 3;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 4;
+    grid-area: footer;
+    height: 80px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+footer p {
+    color: var(--light);
+    font-family: "Ephesis", cursive;
+    font-size: 2em;
+}
 
 /* mediaqueries */
+/*# sourceMappingURL=style.css.map */
